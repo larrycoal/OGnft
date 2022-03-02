@@ -12,4 +12,6 @@ This project basically gives you experience of minting and owning an NFT
 
 4. Mint your NFT before it finishes
 
+# Live link
 
+https://nft-drop-starter-project-livid.vercel.app/
