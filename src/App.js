@@ -6,9 +6,6 @@ import About from "./Pages/About";
 import Header from "./Pages/Header";
 import HowItWorks from "./Pages/How";
 import MintedNfts from "./Pages/MintedNfts";
-// Constants
-// const TWITTER_HANDLE = "_buildspace";
-// const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
   const [userWalletAddress, setUserWallet] = useState(null);
@@ -18,11 +15,7 @@ const App = () => {
       const { solana } = window;
 
       if (solana && solana.isPhantom) {
-        console.log("Phantom wallet found");
-
         const response = await solana.connect({ onlyIfTrusted: true });
-
-        console.log("solana address", response.publicKey.toString());
         setUserWallet(response.publicKey.toString());
       } else {
         alert("Please download phantom solana wallet");
@@ -85,10 +78,8 @@ const App = () => {
       </div>
       <MintedNfts mintedCount={amountOfMinted} />
       <HowItWorks address={userWalletAddress} />
-      <About/>
-      <div className="footer">
-        Made with love &copy;2022 larrycoal
-      </div>
+      <About />
+      <div className="footer">Made with love &copy;2022 larrycoal</div>
     </>
   );
 };
